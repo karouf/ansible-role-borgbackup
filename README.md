@@ -71,6 +71,7 @@ $ git clone https://github.com/borgbase/ansible-role-borgbackup.git roles/borgba
 - `borg_remote_path`: Path to the borg executable on the remote. It will default to `borg`.
 - `borg_encryption_passcommand`: The standard output of this command is used to unlock the encryption key.
 - `borg_retention_policy`: Retention policy for how many backups to keep in each category (daily, weekly, monthly, etc).
+- `borgmatic_schedule_with_anacron`: Schedule any job with a frequency lower than daily using anacron, useful for laptops and workstations that are not always on. Defaults to `false`;
 - `ssh_key_file`: Path to a private ssh key file (default is `.ssh/id_ed25519`). It generates a ed25519 key if the file doesn't exist yet.
 - `borgmatic_cron_hour`: Hour when regular create and prune cron job will run. Defaults to `{{ 6 | random }}`
 - `borgmatic_cron_minute`: Minute when regular create and prune cron job will run. Defaults to  `{{ 59 | random }}`

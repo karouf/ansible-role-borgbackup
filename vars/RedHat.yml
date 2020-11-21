@@ -19,3 +19,5 @@ borg_python_packages:
   - cython
   - borgbackup
   - borgmatic
+
+borg_anacron_package: cronie-anacron

@@ -19,6 +19,12 @@
     state: present
   with_items: "{{ borg_packages }}"
 
+- name: Install anacron if needed
+  package:
+    pkg: "{{ borg_anacron_package }}"
+    state: present
+  when: borgmatic_schedule_with_anacron
+
 - name: Update setuptools if needed
   tags: skip_ansible_lint
   pip:
